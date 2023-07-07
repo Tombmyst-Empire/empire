@@ -1,0 +1,53 @@
+[build-system]
+requires = [
+    "setuptools>=68.0"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{ project_name }}"
+version = "{{ project_version }}"
+authors = [
+    {name="Yann Tremblay", email="yanntremblay@tombmyst.ca"}
+]
+description = "{{ project_description }}"
+readme = "README.md"
+license = {file="LICENSE"}
+requires-python = ">={{ minimum_python_version }}"
+classifiers = [
+    "{{ classifiers|join('",\n\t"') }}"
+]
+dependencies = [
+    "{{ requirements|join('",\n\t"') }}"
+]
+[project.optional-dependencies]
+tests = ["requirements_dev.txt"]
+
+[project.urls]
+"Homepage" = "https://github.com/Tombmyst-Empire/{{ project_name }}"
+"Bug Tracker" = "https://github.com/Tombmyst-Empire/{{ project_name }}/issues"
+
+[tool.pytest.ini_options]
+minversion = "7.3.1"
+python_files = "test_*.py"
+testpaths = [
+    "tests"
+]
+pythonpath = "."
+
+[tool.black]
+line-length = 150
+
+[tool.pylint.master]
+py-version = "{{ minimum_python_version }}"
+max-line-length = 150
+max-args = 10
+max-attributes = 25
+recursive = true
+jobs = 0
+
+[tool.pylint.'MESSAGE CONTROL']
+confidence = "UNDEFINED"
+
+[tool.pylint.reports]
+output-format = "colorized"
