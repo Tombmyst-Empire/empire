@@ -65,9 +65,12 @@ def init():
     try:
         mkdir(root_path)
     except FileExistsError:
-        if input(f'{root_path} already exists! Enter y to delete it and continue: ').lower() == 'y':
+        result: str = input(f'{root_path} already exists! Enter y to delete it and continue, i to ignore, everything else to abort: ').lower()
+        if result == 'y':
             rmtree(root_path)
             mkdir(root_path)
+        elif result == 'i':
+            pass
         else:
             print('Aborting')
             return
