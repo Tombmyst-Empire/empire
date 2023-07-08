@@ -2,6 +2,7 @@ import pathlib
 from os.path import join
 from os import mkdir, makedirs, sep
 from shutil import copyfile, rmtree
+from datetime import datetime
 
 from empire_p._scandir import scan_directory, PredefinedCallbacks
 from empire_p._types import Args
@@ -106,7 +107,8 @@ def init():
                 minimum_python_version=minimum_python_version,
                 classifiers=classifiers,
                 requirements=requirements,
-                py_xxx_version=project_version.replace('.', '')
+                py_xxx_version=project_version.replace('.', ''),
+                date_=datetime.now().strftime('%A %-d %B %Y, %H:%M:%S')
             )
 
             with open(destination_file, 'w', encoding='utf8') as f:

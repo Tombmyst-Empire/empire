@@ -30,6 +30,11 @@ The standard is ``e<project_name>``:
 ### Minimum Python version
 The minimum Python version is *currently* ``3.10``. 
 
+## Not so frequently asked question (who ask these questions anyways...)
+
+* How to use type aliases in Python Sphinx?:
+	You should start the Python code file with ``from __future__ import annotations`` and add the alias to the ``conf.py`` (check at the bottom of the file, there's already one there)
+
 ## References
 
 Python classifiers can be found here: https://pypi.org/classifiers/
