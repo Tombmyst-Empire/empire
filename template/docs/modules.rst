@@ -2,6 +2,5 @@ Modules
 =======
 
 .. toctree::
-   :caption: List of modules:
-   
-   
+    :caption: List of modules:
+	

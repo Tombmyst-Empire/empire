@@ -33,7 +33,9 @@ The minimum Python version is *currently* ``3.10``.
 ## Not so frequently asked question (who ask these questions anyways...)
 
 * How to use type aliases in Python Sphinx?:
-	You should start the Python code file with ``from __future__ import annotations`` and add the alias to the ``conf.py`` (check at the bottom of the file, there's already one there)
+  * You should start the Python code file with ``from __future__ import annotations`` and add the alias to the ``conf.py`` (check at the bottom of the file, there's already one there)
+* Remove a Cython module from making pylint explode?:
+  * In ``pyproject.toml``, section ``[tool.pylint.main]``, add the following: ``extension-pkg-allow-list = ["package.name"]``  
 
 ## References
 

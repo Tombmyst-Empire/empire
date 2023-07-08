@@ -1,8 +1,11 @@
 @echo off
+pip install -r requirements.txt
+pip install -r requirements_dev.txt
+
 echo "Formatting using black"
-black -t {{ py_xxx_version }} -q src
+black -t {{ py_xxx_version }} src
 echo "Formating using isort"
-isort -q src
+isort src
 echo "################################### PYLINT ########################"
 pylint src
 echo "################################### PYTEST ########################"

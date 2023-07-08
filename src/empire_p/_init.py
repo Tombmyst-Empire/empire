@@ -107,7 +107,7 @@ def init():
                 minimum_python_version=minimum_python_version,
                 classifiers=classifiers,
                 requirements=requirements,
-                py_xxx_version=project_version.replace('.', ''),
+                py_xxx_version=f"py{minimum_python_version.replace('.', '')}",
                 date_=datetime.now().strftime('%A %-d %B %Y, %H:%M:%S')
             )
 
